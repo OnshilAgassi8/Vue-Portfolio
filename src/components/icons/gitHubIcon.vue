@@ -9,7 +9,7 @@
 <style>
 
 .github {
-  fill: #3b0a39;
+  fill: #e3d1e3;
   width: 2rem;
 }
 

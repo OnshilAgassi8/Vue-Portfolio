@@ -83,7 +83,7 @@
         <div class="pagination">
             <button class="view-more" :class="currentPage === 1 ? 'disabled' : '' " @click="prevPage"><PrevIcon /></button>
             <p class="current-page">{{ currentPage }}</p>
-            <button class="view-more" :class="currentPage === lastPage ? 'disabled' : '' " @click="nextPage"><NextIcon /></button>
+            <button class="view-more" :class="currentPage === 2 ? 'disabled' : '' " @click="nextPage"><NextIcon /></button>
         </div>
     </div>
 
