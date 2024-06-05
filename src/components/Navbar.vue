@@ -24,8 +24,8 @@
   color: #e3d1e3;
   font-style: oblique;
   text-align: center;
-  padding: 20px;
-  margin-bottom: 100px
+  padding: 30px;
+  margin-bottom: 100px;
 }
 
 .github-icon {

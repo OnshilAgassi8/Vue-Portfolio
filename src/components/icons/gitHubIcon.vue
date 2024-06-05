@@ -10,7 +10,7 @@
 
 .github {
   fill: #e3d1e3;
-  width: 2rem;
+  width: 3rem;
 }
 
 </style>
