@@ -6,7 +6,26 @@
 
 <script>
 
-    export default {
+export default {
+
+data() {
+return {
+searchQuery: '',
+items: [
+{ id: 1, name: 'Item 1' },
+{ id: 2, name: 'Item 2' },
+{ id: 3, name: 'Another Item' }
+]
+};
+},
+computed: {
+filteredItems() {
+if (!this.searchQuery) return this.items;
+return this.items.filter(item =>
+item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+);
+}
+},
 
         data() {
             return {
@@ -70,6 +89,20 @@
 <template>
 
     <div>
+        <input type="text" v-model="searchQuery" placeholder="Search by repository name" @input="performSearch">
+        <select class="select-btn">
+            <option value>All Languages</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+        </select>
+        <ul>
+            <li v-for="item in filtedItems" :key="item.id">{{item.name}}</li>
+        </ul>
+        
+    </div>
+
+    <div>
         <div class="repo-container"> 
             <Skeleton v-if="loading" v-for="n in skeleton">{{ skeleton }}</Skeleton>  
             <div v-else v-for="repo in showMore" class="repo-card" :key="repo.id">
@@ -81,17 +114,38 @@
            
         </div>
         <div class="pagination">
-            <button class="view-more" :class="currentPage === 1 ? 'disabled' : '' " @click="prevPage"><PrevIcon /></button>
+            <button class="view-more" :class=" { 'disabled' : currentPage === 1 } " @click="prevPage"><PrevIcon /></button>
             <p class="current-page">{{ currentPage }}</p>
-            <button class="view-more" :class="currentPage === 2 ? 'disabled' : '' " @click="nextPage"><NextIcon /></button>
+            <button class="view-more" :class=" {'disabled' : currentPage === 2 } " @click="nextPage" :disabled="currentPage === 2"><NextIcon /></button>
         </div>
-    </div>
 
+    </div>
             
+
 </template>
 
 
 <style>
+
+input[type="text"] {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+    margin-right: 10px;
+    border: 1px solid #d479a3;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #000000;
+    font-style: italic;
+  }
+  
+.search-btn {
+    width: 100%;
+}
 
 .repo-container {
     display: grid;
