@@ -147,7 +147,7 @@ input::placeholder {
     font-weight: bold;
   }
   
-select.select-btn {
+.select-btn {
     width: 11%;
     padding: 9px;
     margin-bottom: 40px;
