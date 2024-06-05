@@ -144,6 +144,7 @@ input[type="text"] {
 input::placeholder {
     color: #000000;
     font-style: italic;
+    font-weight: bold;
   }
   
 select.select-btn {
@@ -152,7 +153,8 @@ select.select-btn {
     margin-bottom: 40px;
     border: 1px solid #d479a3;
     border-radius: 5px;
-
+    font-weight:bold;
+    font-style: italic;
 }
 
 .repo-container {
