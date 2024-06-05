@@ -90,15 +90,18 @@ item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
 
     <div>
         <input type="text" v-model="searchQuery" placeholder="Search by repository name" @input="performSearch">
-        <select class="select-btn">
+
+        <select class="select-btn" id="select">
             <option value>All Languages</option>
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
         </select>
+
         <ul>
             <li v-for="item in filtedItems" :key="item.id">{{item.name}}</li>
         </ul>
+        
         
     </div>
 
@@ -128,8 +131,8 @@ item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
 <style>
 
 input[type="text"] {
-    width: 50%;
-    padding: 8px;
+    width: 25%;
+    padding: 9px;
     margin-bottom: 40px;
     margin-left: 50px;
     margin-right: 10px;
@@ -143,8 +146,13 @@ input::placeholder {
     font-style: italic;
   }
   
-.search-btn {
-    width: 100%;
+select.select-btn {
+    width: 11%;
+    padding: 9px;
+    margin-bottom: 40px;
+    border: 1px solid #d479a3;
+    border-radius: 5px;
+
 }
 
 .repo-container {
