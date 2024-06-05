@@ -24,7 +24,7 @@
   color: #e3d1e3;
   font-style: oblique;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 100px;
 }
 
