@@ -91,7 +91,7 @@ item.name.toLowerCase().includes(this.searchQuery.toLowerCase())
     <div>
         <input type="text" v-model="searchQuery" placeholder="Search by repository name" @input="performSearch">
 
-        <select class="select-btn" id="select">
+        <select class="select-btn">
             <option value>All Languages</option>
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
